@@ -1,0 +1,323 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    color: #262626;
+}
+
+.container {
+    width: 90%;
+    max-width: 935px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo h1 {
+    margin: 0;
+    font-family: 'Lobster', cursive;
+    font-size: 1.8rem;
+    color: #262626;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #262626;
+    font-size: 1.2rem;
+}
+
+.profile {
+    display: flex;
+    align-items: flex-start;
+    margin: 40px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 40px;
+}
+
+.profile-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.username {
+    font-size: 1.2rem;
+    color: #262626;
+    margin-bottom: 10px;
+}
+
+.username .verified {
+    color: #3897f0;
+    font-size: 1rem;
+}
+
+.bio {
+    margin-bottom: 15px;
+}
+
+.email-button {
+    padding: 5px 15px;
+    background-color: #3897f0;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.email-button:hover {
+    background-color: #1877f2;
+}
+
+.profile-stats {
+    display: flex;
+    margin-top: 20px;
+}
+
+.profile-stats span {
+    margin-right: 30px;
+    font-size: 0.9rem;
+}
+
+.profile-stats strong {
+    font-weight: 600;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 40px;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-item:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #fff;
+    border-top: 1px solid #dbdbdb;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #8e8e8e;
+    font-size: 0.8rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    max-width: 80%;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 935px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile-stats {
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .profile-stats span {
+        margin: 0 10px;
+        font-size: 0.8rem;
+    }
+
+    .gallery {
+        gap: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    .profile-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .username {
+        font-size: 1rem;
+    }
+
+    .bio {
+        font-size: 0.9rem;
+    }
+
+    .email-button {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+
+    .gallery {
+        gap: 2px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .gallery-item:hover::after {
+        display: none;
+    }
+
+    .gallery-item:active::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+        max-width: none;
+    }
+
+    .close {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+    }
+}
+
+.touch-active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
